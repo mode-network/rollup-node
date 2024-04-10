@@ -71,12 +71,13 @@ Note: The external nodes feature must be enabled on the network for this to work
 ./download-config.py $CONDUIT_NETWORK
 ```
 
-3. Ensure you have an Ethereum L1 full node RPC available (not Conduit), and copy `.env.example` to `.env` setting `OP_NODE_L1_ETH_RPC`. If running your own L1 node, it needs to be synced before the specific Conduit network will be able to fully sync. Example:
+3. Ensure you have an Ethereum L1 full node RPC available (not Conduit), and copy `.env.example` to `.env` setting `OP_NODE_L1_ETH_RPC`. If running your own L1 node, it needs to be synced before the specific Conduit network will be able to fully sync. You also need a Beacon API RPC which can be set in `OP_NODE_L1_ETH_RPC`. Example:
 
 ```
 # .env file
 # [recommended] replace with your preferred L1 (Ethereum, not Conduit) node RPC URL:
 OP_NODE_L1_ETH_RPC=https://mainnet.gateway.tenderly.co/<your-tenderly-api-key>
+OP_NODE_L1_BEACON=<beacon api rpc>
 ```
 
 If you are running a stack using `celestia` for DA, copy instead `.env.example.celestia` to `.env`, set also `CELESTIA_CORE_IP`, `CELESTIA_API` and `CELESTIA_P2P_NETWORK`. Example:
